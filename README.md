@@ -128,7 +128,7 @@ h. Support and Updates: PDKs are often accompanied by support from the foundry o
 ![Screenshot from 2024-08-22 23-20-53](https://github.com/user-attachments/assets/e13a8bbd-2485-45ca-abdd-35d86b9c97d8)
 
 #### The Flop Ratio
-flop ratio =(total no. od d flop realised) / (total no. cells)
+flop ratio =(total no. of d flop realised) / (total no. cells)
 
            = 1613/14876
            
