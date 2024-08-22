@@ -120,6 +120,23 @@ h. Support and Updates: PDKs are often accompanied by support from the foundry o
 ![Screenshot from 2024-08-22 22-27-12](https://github.com/user-attachments/assets/5a2c5ce1-e0c2-4bfb-847c-ad499b16d89a)
 ![Screenshot from 2024-08-22 19-45-35](https://github.com/user-attachments/assets/af2ce2da-acbf-410a-81ea-20b8f3538705)
 
+### snippets from the SYNTHESIS task of picorv32a 
+#### here you can see: total no. of cells and total no. D FlipFlop used & the chip area for module
+
+![Screenshot from 2024-08-22 23-23-06](https://github.com/user-attachments/assets/f8841bc0-0fdb-456a-b3e5-be5eb849e277)
+![Screenshot from 2024-08-22 23-20-18](https://github.com/user-attachments/assets/19b9e6fa-75a7-462e-bb1c-4a0ba72df3ce)
+![Screenshot from 2024-08-22 23-20-53](https://github.com/user-attachments/assets/e13a8bbd-2485-45ca-abdd-35d86b9c97d8)
+
+#### The Flop Ratio
+flop ratio =(total no. od d f/f realised)/(total no. cells)
+           = 1613/14876
+           = 0.10842
+% ratio= 10.842
+
+
+
+
+
 
 
 
