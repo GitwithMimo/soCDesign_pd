@@ -113,12 +113,5 @@ h. Support and Updates: PDKs are often accompanied by support from the foundry o
 
 
 
-#### some of my LINUX code snippets of 1st day task
 
-/home/vsduser/Pictures/Screenshot from 2024-08-22 19-45-35.png
-/home/vsduser/Pictures/Screenshot from 2024-08-22 22-27-12.png
-/home/vsduser/Pictures/Screenshot from 2024-08-22 22-28-26.png
-/home/vsduser/Pictures/Screenshot from 2024-08-22 22-49-36.png
-/home/vsduser/Pictures/Screenshot from 2024-08-22 23-07-28.png
-/home/vsduser/Pictures/Screenshot from 2024-08-22 23-08-43.png
 
