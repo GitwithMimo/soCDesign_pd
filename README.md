@@ -1,9 +1,31 @@
-## DAY-1: Overview of open source EDA OpenLANE and Sky130PDK
+## Digital VLSI SoC Design and Planning
 
 ## Contents
 [ASIC Design Flow](#asic-design-flow)
 
 [DAY-1: Overview of open source EDA OpenLANE and Sky130PDK](#day-1-overview-of-open-source-eda-openlane-and-sky130pdk)
+
+
+## ASIC Design Flow
+ASIC (Application-Specific Integrated Circuit) design flow refers to the series of steps involved in designing a custom chip tailored for a specific application. Unlike general-purpose ICs, ASICs are optimized for particular tasks, making them highly efficient for their intended purpose. The design flow is a structured process that ensures the final chip meets all functional, performance, and manufacturability requirements.
+
+Major Steps in the ASIC Design Flow
+1. Specification:
+2. Design Entry (RTL Design)
+3. Functional Verification
+4. Synthesis
+5. Design for Testability (DFT)
+6. Static Timing Analysis (STA)
+7. Floorplanning
+8. Placement and Routing
+9. Power Analysis
+10. Physical Verification
+11. RC Extraction and Post-Layout STA
+12. Signoff and GDSII Generation
+13. Fabrication
+14. Testing and Packaging
+
+
 
 
 ## DAY-1: Overview of open source EDA OpenLANE and Sky130PDK
