@@ -24,3 +24,61 @@ some information about OpenLANE:
 9.Applications: OpenLANE can be used for educational purposes, research, and even for small-scale commercial projects. It is particularly useful for academics and hobbyists who may not have access to expensive commercial EDA tools.
 
 10.Ecosystem: OpenLANE is part of a larger ecosystem of open-source EDA tools and is often used in conjunction with other tools like OpenROAD for detailed routing and OpenPhySyn for physical synthesis.
+
+
+
+#### OpenLANE ASIC Flow
+1. Design RTL:
+   Input: The flow starts with the RTL (Register Transfer Level) code, which is the high-level design description of the integrated circuit.
+2. RTL Synthesis (Yosys):
+   Yosys: Yosys is an open-source tool that converts the RTL design (written in Verilog) into a gate-level netlist.
+3. Static Timing Analysis (STA - OpenSTA):
+   OpenSTA: This tool performs static timing analysis on the synthesized netlist to check if the design meets timing requirements.
+4. DFT (Design for Testability) - Fault:
+   Fault Tool: DFT techniques are applied to the design to make it easier to test and debug. This step ensures that manufacturing defects can be detected during testing.
+5. OpenROAD App (Physical Design):
+   Floorplanning: The layout of the major blocks in the design is planned, setting up the physical boundaries and relative placement of components.
+   Placement: The placement of standard cells (basic building blocks of the chip) is optimized.
+   Clock Tree Synthesis (CTS): A clock distribution network is generated to ensure the clock signal reaches all parts of the circuit simultaneously.
+   Optimization: Further adjustments are made to improve performance, reduce power consumption, or fix timing violations.
+   Global Routing: High-level routing paths are planned before detailed routing.
+6. Fake Antenna Diodes Insertion Script:
+   Insertion of Antenna Diodes: During the routing process, fake antenna diodes are inserted to protect transistors from damage due to charge accumulation on metal lines during manufacturing.
+7. Detailed Routing (TritonRoute):
+   TritonRoute: A detailed routing tool that defines the exact paths of wires connecting different components of the design.
+8. Logical Equivalence Check (LEC - Yosys):
+   Yosys: After routing, the design is checked to ensure that the netlist is logically equivalent to the original RTL, verifying that no functional changes have occurred.
+9. STA (OpenSTA):
+   Second Pass STA: Another round of static timing analysis is performed on the design, now considering the real delays due to the physical layout (post-layout STA).
+10. Physical Verification (Magic & Netgen):
+   Magic: A layout tool used for physical verification, such as DRC (Design Rule Check) and LVS (Layout vs. Schematic) checks.
+   Netgen: A tool used for verifying that the physical layout corresponds to the logical design.
+11. GDSII Streaming (Magic):
+   GDSII Output: Finally, the verified design is streamed out as a GDSII file, which is the standard format used to send the design to fabrication.
+14. SKY130 PDK:
+   PDK: The process design kit (PDK) used in this flow is SKY130, an open-source 130nm technology node provided by SkyWater Technology. This PDK contains the models, design rules, and libraries necessary to design and fabricate the IC.
+
+
+
+#### PDK
+A Process Design Kit (PDK) is a set of technical design files and documentation that provides the necessary information for designing integrated circuits (ICs) for a specific semiconductor fabrication process. The PDK is essential for semiconductor design because it contains the rules, models, and parameters that ensure the designed circuit can be manufactured successfully on a particular fabrication line or "process."
+
+Here are some key components and aspects of a PDK:
+
+a.Design Rules: These are the geometric constraints that define how small the features can be, how close they can be to each other, and other layout considerations to ensure that the design can be manufactured without defects.
+
+b.Device Models: These are mathematical models that represent the electrical behavior of transistors and other components. They are used in simulation to predict how the circuit will perform before it is fabricated.
+
+c.Layout Libraries: These include standard cells, IP blocks, and other pre-designed components that can be used as building blocks in the design process. They are typically provided in a format that can be used with electronic design automation (EDA) tools.
+
+d.Technology Files: These files contain information about the fabrication process, such as layer stacks, materials, and process-specific parameters. They are used by EDA tools to ensure that the design adheres to the specific requirements of the fabrication process.
+
+e.Simulation Models: In addition to device models, PDKs may include other simulation models for parasitic extraction, reliability analysis, and other aspects of circuit performance.
+
+f.Documentation: PDKs come with extensive documentation that explains how to use the kit, the meaning of various parameters, and the best practices for design with the specific process.
+
+g.Characterization Data: This includes measured data from test structures that have been fabricated and tested on the actual process. This data is used to validate the accuracy of the models and design rules.
+
+h.Support and Updates: PDKs are often accompanied by support from the foundry or IP provider, including updates to reflect process improvements or corrections.
+
+
