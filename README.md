@@ -1,5 +1,11 @@
 ## DAY-1: Overview of open source EDA OpenLANE and Sky130PDK
 
+## Table of Contents
+
+- [DAY-1: Overview of open source EDA OpenLANE and Sky130PDK](#DAY-1: Overview of open source EDA OpenLANE and Sky130PDK)
+
+## Day - 1 Introduction of Open-Source EDA, OpenLane and Sky130 PDK
+
 #### OpenLANE
 OpenLANE is an open-source electronic design automation (EDA) tool that provides a complete flow for the digital integrated circuit (IC) design from RTL (Register-Transfer Level) to GDSII (Graphic Data System II, a standard file format for IC layout). It is designed to automate the process of physical design, which includes various steps such as synthesis, floorplanning, placement, routing, and verification.
 
