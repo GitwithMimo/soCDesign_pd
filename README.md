@@ -111,6 +111,15 @@ g. Characterization Data: This includes measured data from test structures that 
 
 h. Support and Updates: PDKs are often accompanied by support from the foundry or IP provider, including updates to reflect process improvements or corrections.
 
+#### some of my LINUX code snippets from day-1 class
+
+![Screenshot from 2024-08-22 23-08-43](https://github.com/user-attachments/assets/ad6bd3ff-4f3f-4402-8ff5-83761b2be1c6)
+![Screenshot from 2024-08-22 23-07-28](https://github.com/user-attachments/assets/5bad31c5-0e2f-469e-ab6f-574822d97856)
+![Screenshot from 2024-08-22 22-49-36](https://github.com/user-attachments/assets/b3f3ae1c-d77a-4355-94fc-6f2bc0b6022f)
+![Screenshot from 2024-08-22 22-28-26](https://github.com/user-attachments/assets/ccb5afc3-e9a6-48f4-a468-197e8089d7e2)
+![Screenshot from 2024-08-22 22-27-12](https://github.com/user-attachments/assets/5a2c5ce1-e0c2-4bfb-847c-ad499b16d89a)
+![Screenshot from 2024-08-22 19-45-35](https://github.com/user-attachments/assets/af2ce2da-acbf-410a-81ea-20b8f3538705)
+
 
 
 
