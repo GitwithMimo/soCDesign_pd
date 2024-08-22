@@ -1,8 +1,8 @@
 ## DAY-1: Overview of open source EDA OpenLANE and Sky130PDK
 
-## Table of Contents
+## Contents
 
-- [DAY-1: Overview of open source EDA OpenLANE and Sky130PDK](#DAY-1: Overview of open source EDA OpenLANE and Sky130PDK)
+[DAY-1: Overview of open source EDA OpenLANE and Sky130PDK](#DAY-1: Overview of open source EDA OpenLANE and Sky130PDK)
 
 ## Day - 1 Introduction of Open-Source EDA, OpenLane and Sky130 PDK
 
