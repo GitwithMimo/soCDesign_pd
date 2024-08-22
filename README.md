@@ -129,8 +129,11 @@ h. Support and Updates: PDKs are often accompanied by support from the foundry o
 
 #### The Flop Ratio
 flop ratio =(total no. od d f/f realised)/(total no. cells)
+
            = 1613/14876
+           
            = 0.10842
+           
 % ratio= 10.842
 
 
