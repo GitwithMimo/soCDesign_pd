@@ -147,11 +147,11 @@ flop ratio =(total no. of d flop realised) / (total no. cells)
 
 ## Table of Contents
 
-- [Utilization factor and Aspect ratio of a chip or die:](#utilization-factor-and-aspect-ratio-of-a-chip-or-die:)
-- [Concept of pre-placed cells and de-coupling capacitors:](#concept-of-pre-placed-cells-and-de-coupling-capacitors:)
+- [Utilization factor and Aspect ratio of a chip or die:](#utilization-factor-and-aspect-ratio-of-a-chip-or-die)
+- [Concept of pre-placed cells and de-coupling capacitors:](#concept-of-pre-placed-cells-and-de-coupling-capacitors)
 - [Hands-on LABs](#hands-on-LABs--)
-- [Cell design and characterization flow:-](#cell-design-and-characterization-flow:-)
-- [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay:-)
+- [Cell design and characterization flow:-](#cell-design-and-characterization-flow-)
+- [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
 
 ### Utilization factor and Aspect ratio of a chip or die:
 #### Utilization Factor:
