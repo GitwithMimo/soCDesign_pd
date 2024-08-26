@@ -142,7 +142,7 @@ flop ratio =(total no. of d flop realised) / (total no. cells)
 
 ## DAY-2: Good Floorplan vs bad Floorplan and Introduction to library cells
 
-#### Utilization factor and Aspect ratio of a chip or die:
+### Utilization factor and Aspect ratio of a chip or die:
 #### Utilization Factor:
 The utilization factor of a chip refers to the ratio of the area that is actually used for active devices (like transistors, capacitors, etc.) to the total area of the chip. It is a measure of how efficiently the available silicon real estate is being used. A higher utilization factor indicates that more of the chip's area is dedicated to functional components, which is generally desirable as it maximizes the performance or functionality per unit area.
 
@@ -151,7 +151,7 @@ The aspect ratio of a chip is the ratio of its length to its width. It is a geom
 
 ![106354493-338a5200-6318-11eb-93a0-80552f1135c8](https://github.com/user-attachments/assets/9858e158-b975-4f92-9b9b-f47b0e092d5d)
 
-## Concept of pre-placed cells and de-coupling capacitors:
+### Concept of pre-placed cells and de-coupling capacitors:
 
 #### Pre-placed Cells:
 Pre-placed cells are components or functional units within an IC or on a PCB that are placed at specific locations before the main placement and routing process begins. These cells are typically used for power management, signal integrity, or other critical functions that require precise positioning to meet design constraints. Pre-placed cells can include decoupling capacitors, power pads, voltage regulators, or other components that are essential for the proper functioning of the circuit.
@@ -163,23 +163,25 @@ Decoupling capacitors are small-value capacitors placed between the power supply
 
 ![EndCapPlacement](https://github.com/user-attachments/assets/0b65cd60-04fd-4b7b-94af-f2bf97e828c4)
 
-#### Run_floorplan:
+### Hands-on LABs:--
+
+#### 1-Run_floorplan:
 
 ![Screenshot from 2024-08-24 15-59-11](https://github.com/user-attachments/assets/3f6738d0-0a08-4bd6-898f-dadecf5dd6ab)
 
 ![Screenshot from 2024-08-24 16-05-01](https://github.com/user-attachments/assets/ceb5ac07-f77f-4cf4-84f5-01c4160c6978)
 
-#### ioPlacer.log :
+#### 2-ioPlacer.log :
 
 ![Screenshot from 2024-08-24 16-06-18](https://github.com/user-attachments/assets/afb116d4-dcea-4185-bc04-e66adff29710)
 
 ![Screenshot from 2024-08-24 16-22-37](https://github.com/user-attachments/assets/e84e5c3c-b47c-4916-a6ae-36c519d6dd6c)
 
-#### Picorv32a floorplan def file:
+#### 3-Picorv32a floorplan def file:
 
 ![Screenshot from 2024-08-25 23-32-59](https://github.com/user-attachments/assets/dadd262d-a644-4423-834c-88cdc3cdb89b)
 
-#### magic tool tech file and the layout of design:
+#### 4-magic tool tech file and the layout of design:
 
 ![Screenshot from 2024-08-25 23-45-18](https://github.com/user-attachments/assets/f2e3bf26-01f4-4108-a825-129cf5ddbde2)
 
@@ -189,7 +191,7 @@ Decoupling capacitors are small-value capacitors placed between the power supply
 
 ![Screenshot from 2024-08-26 00-01-09](https://github.com/user-attachments/assets/cd7f7df3-bd61-4ba9-9c0f-cec1a383bff6)
 
-littie zoomed in
+little zoomed in
 
 ![Screenshot from 2024-08-26 00-01-18](https://github.com/user-attachments/assets/7ea5090a-59cd-4a82-bd97-2d237b11f442)
 
@@ -197,7 +199,7 @@ littie zoomed in
 
 ![Screenshot from 2024-08-26 00-13-09](https://github.com/user-attachments/assets/365eeebf-3d8b-44c8-9102-6ee61cd235ae)
 
-#### Congestion aware placement using RePlace:
+#### 5-Congestion aware placement using RePlace:
 
 ![Screenshot from 2024-08-26 01-09-48](https://github.com/user-attachments/assets/f0b33f46-165d-4bab-8151-5c79ffc6ece9)
 
@@ -206,6 +208,91 @@ littie zoomed in
 ![Screenshot from 2024-08-26 01-17-06](https://github.com/user-attachments/assets/9b120162-0598-46d4-b5b3-e188de85633b)
 
 ![Screenshot from 2024-08-26 01-20-35](https://github.com/user-attachments/assets/93fd7307-3503-44fe-b39d-f5250fdaf18e)
+
+
+### Cell design and characterization flow:-
+#### Cell design flow:
+The cell design flow is a systematic process used to create and optimize individual cells within an integrated circuit (IC). These cells are basic building blocks, such as logic gates, flip-flops, or other functional units. The cell design flow typically involves the following steps:
+
+ #### 1-Specification and Requirements:
+        a. Define the cell's functionality and performance requirements (e.g., speed, power, area).
+        b. Establish operating conditions and constraints.
+
+ #### 2-Conceptual Design:
+        a. Develop a high-level representation using hardware description languages (HDL) like Verilog or VHDL.
+        b. Perform initial simulations to validate the concept.
+
+ #### 3-Schematic Capture:
+        a. Create a detailed schematic using electronic design automation (EDA) tools.
+        b. Include all necessary components (transistors, resistors, capacitors, etc.).
+
+ #### 4-Circuit Simulation:
+        a. Simulate the cell using tools like SPICE to verify functionality and performance.
+        b. Adjust the design as needed to meet specifications.
+
+ #### 5-Layout Design:
+        a. Translate the schematic into a physical layout, placing and routing components on the silicon substrate.
+        b. Ensure adherence to design rules and constraints.
+
+ #### 6-Layout Versus Schematic (LVS) Check:
+        a. Compare the layout to the schematic to ensure they match.
+        b. Fix any discrepancies.
+
+ #### 7-Design Rule Check (DRC):
+        a. Verify that the layout complies with fabrication design rules.
+        b. Make necessary adjustments to pass the DRC.
+
+ #### 8-Extraction:
+        a. Extract parasitic capacitances, resistances, and inductances from the layout.
+        b. Use this information for post-layout simulation.
+
+ #### 9-Post-Layout Simulation:
+        a. Simulate the cell with extracted parasitics to ensure it still meets performance requirements.
+        b. Iterate on the design if necessary.
+
+ #### 10-Validation and Testing:
+        a. Conduct additional simulations and checks to validate the design.
+        b. Perform physical testing on fabricated cells to ensure they meet specifications.
+
+ #### 11-Library Integration:
+        a. Integrate the cell into a cell library for use in larger IC designs.
+        b. Ensure compatibility with other cells in the library.
+
+#### Cell Characterization Flow
+
+Cell characterization is the process of determining the performance characteristics of a cell under various conditions. This information is crucial for ensuring that the cell behaves as expected when used in larger circuits. The characterization flow typically involves the following steps:
+
+    I.    Pre-Characterization Setup
+    II.   Simulation
+    III.  Data Collection
+    IV.   Analysis
+    V.    Model Generation 
+    VI.   Validation
+    VII.  Documentation
+    VIII. Release
+
+  ![maxresdefault](https://github.com/user-attachments/assets/795cffda-9895-48b9-83c2-44433763ab91)
+
+  ### Timing threshold and Propagation delay:-
+
+  #### Timing threshold:
+  Timing thresholds are critical parameters in the design and analysis of digital circuits, particularly in the context of integrated circuits (ICs). They define the boundaries within which a circuit must operate to ensure reliable and correct functionality. Timing thresholds are used to determine whether a circuit meets its performance specifications, such as speed and power consumption.
+
+  #### Propagation delay:
+  Propagation delay is a critical parameter in the design and analysis of digital circuits, particularly in the context of integrated circuits (ICs). It refers to the time it takes for a signal to propagate through a circuit from the input to the output. Understanding propagation delay is essential for ensuring that a circuit meets its performance specifications, such as speed and reliability.
+
+##### Components of Propagation Delay:
+
+    a. Gate Delay: The time it takes for a signal to pass through a single logic gate.
+    b. Interconnect Delay: The time it takes for a signal to travel along the wires or interconnects between gates.
+    c. Transmission Line Effects: In high-speed circuits, the effects of transmission lines, such as reflections and signal degradation, can also contribute to propagation delay.
+
+    ![124042219-5b203c00-d9d6-11eb-9915-79e2bcb4a506](https://github.com/user-attachments/assets/8d8ea38c-6ddc-48a4-8046-4cd1cfe3fdf0)
+
+
+
+
+       .
 
 
 
