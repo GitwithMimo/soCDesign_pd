@@ -287,8 +287,8 @@ Cell characterization is the process of determining the performance characterist
     b. Interconnect Delay: The time it takes for a signal to travel along the wires or interconnects between gates.
     c. Transmission Line Effects: In high-speed circuits, the effects of transmission lines, such as reflections and signal degradation, can also contribute to propagation delay.
 
-    ![124042219-5b203c00-d9d6-11eb-9915-79e2bcb4a506](https://github.com/user-attachments/assets/8d8ea38c-6ddc-48a4-8046-4cd1cfe3fdf0)
-
+     
+![124042219-5b203c00-d9d6-11eb-9915-79e2bcb4a506](https://github.com/user-attachments/assets/7c793d77-60de-4b05-9980-331c10c577f6)
 
 
 
