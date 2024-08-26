@@ -142,6 +142,17 @@ flop ratio =(total no. of d flop realised) / (total no. cells)
 
 ## DAY-2: Good Floorplan vs bad Floorplan and Introduction to library cells
 
+### CONTENTS
+# My Project
+
+## Table of Contents
+
+- [Utilization factor and Aspect ratio of a chip or die:](#utilization-factor-and-aspect-ratio-of-a-chip-or-die:)
+- [Concept of pre-placed cells and de-coupling capacitors:](#concept-of-pre-placed-cells-and-de-coupling-capacitors:)
+- [Hands-on LABs](#hands-on-LABs--)
+- [Cell design and characterization flow:-](#cell-design-and-characterization-flow:-)
+- [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay:-)
+
 ### Utilization factor and Aspect ratio of a chip or die:
 #### Utilization Factor:
 The utilization factor of a chip refers to the ratio of the area that is actually used for active devices (like transistors, capacitors, etc.) to the total area of the chip. It is a measure of how efficiently the available silicon real estate is being used. A higher utilization factor indicates that more of the chip's area is dedicated to functional components, which is generally desirable as it maximizes the performance or functionality per unit area.
