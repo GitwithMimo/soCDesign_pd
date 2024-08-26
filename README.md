@@ -143,7 +143,6 @@ flop ratio =(total no. of d flop realised) / (total no. cells)
 ## DAY-2: Good Floorplan vs bad Floorplan and Introduction to library cells
 
 ### CONTENTS
-# My Project
 
 ## Table of Contents
 
