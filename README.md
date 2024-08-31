@@ -312,7 +312,7 @@ Cell characterization is the process of determining the performance characterist
 
 - [VTC Spice Simulation](#vtc-spice-simulation)
 - [Concept on Switching Threshold](#concept-on-switching-threshold)
-- [Hands-on LABs](#hands-on-LABs--)
+- [Static And Dynamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
 - [Cell design and characterization flow:-](#cell-design-and-characterization-flow-)
 - [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
 
@@ -324,33 +324,27 @@ In a VTC simulation, the input voltage to a circuit is swept across a range of v
 
 Here's a step-by-step overview of how a VTC spice simulation might be performed:
 
-  #### I> Circuit Design: 
-          The circuit to be analyzed is designed in a schematic capture tool that is compatible with the SPICE simulator being used.
+  #### I> Circuit Design: The circuit to be analyzed is designed in a schematic capture tool that is compatible with the SPICE simulator being used.
 
-  #### II> Simulation Setup: 
-           The SPICE simulation is set up with the appropriate analysis type, which could be a DC sweep analysis if the goal is to plot the VTC over a range of DC input voltages.
+  #### II> Simulation Setup: The SPICE simulation is set up with the appropriate analysis type, which could be a DC sweep analysis if the goal is to plot the VTC over a range of DC input voltages.
 
- #### III> nput Signal Sweep: 
-            The input voltage source is configured to sweep across the desired range of voltages. This could be from the negative supply rail to the positive supply rail, or any other relevant range.
+ #### III> nput Signal Sweep: The input voltage source is configured to sweep across the desired range of voltages. This could be from the negative supply rail to the positive supply rail, or any other relevant range.
 
   #### IV> Output Measurement: 
            The output node of the circuit is specified, and the simulator is instructed to record the voltage at this node for each input voltage step.
 
-   #### V> Simulation Run: 
-           The simulation is run, and the SPICE engine calculates the circuit's response to each input voltage.
+ #### V> Simulation Run: The simulation is run, and the SPICE engine calculates the circuit's response to each input voltage.
 
-  #### VI> Data Analysis: 
-           The resulting data is plotted as a graph with input voltage on the x-axis and output voltage on the y-axis. This plot is the VTC of the circuit.
+  #### VI> Data Analysis: The resulting data is plotted as a graph with input voltage on the x-axis and output voltage on the y-axis. This plot is the VTC of the circuit.
 
-#### VII>  Interpretation:
-           The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
+#### VII>  Interpretation: The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
 
 ![maxresdefault](https://github.com/user-attachments/assets/bc744779-b574-4210-be73-4146152afa1a)
 
 
 
 
-#### Concept on Switching Threshold
+### Concept on Switching Threshold
 
 The concept of the switching threshold is crucial in the context of digital circuits, particularly in logic gates and transistors. The switching threshold refers to the input voltage level at which the circuit transitions from one state to another, typically from a low (logic 0) to a high (logic 1) state or vice versa.
 
@@ -371,6 +365,37 @@ The switching threshold is influenced by several factors, including:
     5. Load Capacitance: The capacitive load connected to the output of the circuit can affect the switching threshold due to the dynamic behavior of the circuit during switching.
 
 ![2BqKy](https://github.com/user-attachments/assets/98bd56a3-610a-48cb-a8bc-629143427dbd)
+
+
+
+
+### Static And Dynamic Simulation of CMOS Inverter
+
+#### Static Simulation
+Static simulation, also known as DC analysis, involves analyzing the circuit's behavior at DC (Direct Current) steady-state conditions. This type of simulation is used to determine the following characteristics:
+
+    Voltage Transfer Characteristic (VTC): The VTC plot shows the relationship between the input voltage (Vin) and the output voltage (Vout) of the inverter. It helps in understanding the transition between the logic levels (0 and 1) and the noise margins.
+
+    a- Switching Threshold (V_th): The input voltage at which the inverter switches from one logic state to another. Ideally, for a symmetrical VTC, the switching threshold is at Vdd/2, where Vdd is the supply voltage.
+
+    b- Noise Margins: The maximum noise voltage that can be tolerated at the input while the output remains in the correct logic state.
+
+    c- Static Power Dissipation: The power consumed by the inverter when it is in a stable state (not switching). This is typically very low in CMOS circuits due to the low leakage currents.
+
+#### Dynamic Simulation
+Dynamic simulation, also known as transient analysis, involves analyzing the circuit's behavior over time as it responds to time-varying input signals. This type of simulation is used to determine the following characteristics:
+
+    a- Propagation Delay (t_p): The time it takes for the output to change in response to a change in the input. It is typically measured as the time from the 50% point of the input transition to the 50% point of the output transition.
+
+    b- Rise Time (t_r) and Fall Time (t_f): The times it takes for the output to transition from 10% to 90% (rise time) and from 90% to 10% (fall time) of the output voltage swing.
+
+    c- Power Consumption: The dynamic power consumed by the inverter during switching, which is a function of the switching frequency, load capacitance, and supply voltage.
+
+    d- Transient Response: The overall response of the inverter to input signals, including overshoot, undershoot, and ringing.
+
+
+
+
 
 
        
