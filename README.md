@@ -7,7 +7,7 @@
 
 [DAY-2: Good Floorplan vs bad Floorplan and Introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
 
-[DAY-3: Design Library Cell using Magic Layout and NGSPICE Characterization](#day-2-design-library-cell-using-magic-layout-and-ngspice-characterization)
+[DAY-3: Design Library Cell using Magic Layout and NGSPICE Characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
 
 ## ASIC Design Flow
 ASIC (Application-Specific Integrated Circuit) design flow refers to the series of steps involved in designing a custom chip tailored for a specific application. Unlike general-purpose ICs, ASICs are optimized for particular tasks, making them highly efficient for their intended purpose. The design flow is a structured process that ensures the final chip meets all functional, performance, and manufacturability requirements.
@@ -317,7 +317,7 @@ Cell characterization is the process of determining the performance characterist
 - [Concept on Switching Threshold](#concept-on-switching-threshold)
 - [Static And Dynamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
 - [Layout and CMOS Fabrication Process](#layout-and-cmos-fabrication-process)
-- [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
+- [LABs Exercise](#labs-exercise)
 
 
 ### VTC Spice Simulation
@@ -474,6 +474,71 @@ The CMOS (Complementary Metal-Oxide-Semiconductor) fabrication process is a comp
 ![Screenshot 2024-08-31 16 28 33](https://github.com/user-attachments/assets/d2f5f5f2-9e34-4a67-8bc8-ec337f192e6c)
 
 
+### LABs Exercise
+
+#### 1. IoPlacer revision & adding the "set::env" command
+
+![copy_of_sky130](https://github.com/user-attachments/assets/7a93c68a-0453-4cec-8a6a-ce2475ec8dcf)
+
+![Screenshot from 2024-08-29 17-35-05](https://github.com/user-attachments/assets/b3901dc3-ed2d-48a2-a770-df2566893c80)
+
+here the the i/o pins are congestedand and overlapped:
+![Screenshot from 2024-08-29 17-40-03](https://github.com/user-attachments/assets/b753f254-58f2-4765-85a2-62cb961207a2)
+
+#### 2. Inverter layout in Magic tool
+
+![Screenshot from 2024-08-29 18-47-01](https://github.com/user-attachments/assets/8383d237-ac12-4b89-bafb-98c06054e61f)
+
+![Screenshot from 2024-08-29 18-54-02](https://github.com/user-attachments/assets/ea664cd7-cb07-442e-838b-e7f4ab867fb1)
+
+#### 3. Extraction to spice format
+
+![Screenshot from 2024-08-29 19-08-56](https://github.com/user-attachments/assets/d323e7d9-33d4-4830-b8ca-8c272448b887)
+
+![Screenshot from 2024-08-29 19-10-00](https://github.com/user-attachments/assets/c66868ba-5ade-4a03-993d-28590ebd35fb)
+
+![Screenshot from 2024-08-29 19-10-45](https://github.com/user-attachments/assets/f35f1939-cda1-4ecf-a890-53af26cb7bce)
+
+#### 4. spice tecgnology file, simulatio and output graph
+
+![Screenshot from 2024-08-29 19-10-45](https://github.com/user-attachments/assets/6f227d4a-0ba5-44cf-a165-52d39c790ccf)
+
+![Screenshot from 2024-08-30 18-31-52](https://github.com/user-attachments/assets/c8c56581-42d2-482d-8799-bbcfa6f89ad5)
+
+![Screenshot from 2024-08-30 01-51-46](https://github.com/user-attachments/assets/6ea7716f-15a0-4842-8202-7422e3a86411)
+
+updated tech file:
+![Screenshot from 2024-08-30 18-32-22](https://github.com/user-attachments/assets/fefa7871-be72-49ae-b910-8aeb77211ac4)
+
+#### 5. Parameters Calculation
+##### 5-a rise transition of of output: 20% of VDD to 80% of VDD
+rise_transition = (80% of 3.3v) - (20% of 3.3v)
+                = (x-coordinate pos. of 2.64v - x-coordinate pos. of 0.66v)
+                = (6.24247*e-19) - (6.61804*e-19)
+                = 0.06163 ns
+
+##### 5-b fall transition of of output: 80% of VDD to 20% of VDD
+fall_transition = (20% of 3.3v) - (80% of 3.3v)
+                = (x-coordinate pos. of 0.66v - x-coordinate pos. of 2.64v)
+                = (8.09409*e-19) - (8.05156*e-19)
+                = 0.04253 ns
+                
+                ![Screenshot from 2024-08-30 18-18-42](https://github.com/user-attachments/assets/7fc13cca-f173-40e0-8c3b-ac0d6a6858c8)
+
+                
+ ##### 5-c cell rise delay: (50% of o/p rise) - (50% of i/p fall)
+ cell_rise_delay= (x-coordinate pos. of 1.65v - x-coordinate pos. of 1.65v)
+                = (6.2089*e-19) - (6.15*e-19)
+                = 0.0589 ns
+                
+                ![Screenshot from 2024-08-30 18-24-04](https://github.com/user-attachments/assets/8f885539-8b54-4e08-b39b-6eb989749332)
+
+ ##### 5-d cell fall delay: (50% of o/p fall) - (50% of i/p rise)
+ cell_fall_delay= (x-coordinate pos. of 1.65v - x-coordinate pos. of 1.65v)
+                = (8.07657*e-19) - (8.05*e-19)
+                = 0.02657 ns
+                
+                ![Screenshot from 2024-08-30 18-26-33](https://github.com/user-attachments/assets/9636b765-cf0f-4b80-9bd0-c28927982734)
 
 
 
