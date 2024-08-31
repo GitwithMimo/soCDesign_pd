@@ -471,8 +471,7 @@ The CMOS (Complementary Metal-Oxide-Semiconductor) fabrication process is a comp
 
 ![Assigning-the-names-of-NMOS-and-PMOS](https://github.com/user-attachments/assets/936498d3-3e2e-41d5-8ee4-da89fd7c5e7c)
 
-
-
+![Screenshot 2024-08-31 16 28 33](https://github.com/user-attachments/assets/d2f5f5f2-9e34-4a67-8bc8-ec337f192e6c)
 
 
 
