@@ -523,7 +523,7 @@ fall_transition = (20% of 3.3v) - (80% of 3.3v)
                 = (8.09409*e-19) - (8.05156*e-19)
                 = 0.04253 ns
                 
-                ![Screenshot from 2024-08-30 18-18-42](https://github.com/user-attachments/assets/7fc13cca-f173-40e0-8c3b-ac0d6a6858c8)
+   ![Screenshot from 2024-08-30 18-18-42](https://github.com/user-attachments/assets/7fc13cca-f173-40e0-8c3b-ac0d6a6858c8)
 
                 
  ##### 5-c cell rise delay: (50% of o/p rise) - (50% of i/p fall)
@@ -531,14 +531,14 @@ fall_transition = (20% of 3.3v) - (80% of 3.3v)
                 = (6.2089*e-19) - (6.15*e-19)
                 = 0.0589 ns
                 
-                ![Screenshot from 2024-08-30 18-24-04](https://github.com/user-attachments/assets/8f885539-8b54-4e08-b39b-6eb989749332)
+   ![Screenshot from 2024-08-30 18-24-04](https://github.com/user-attachments/assets/8f885539-8b54-4e08-b39b-6eb989749332)
 
  ##### 5-d cell fall delay: (50% of o/p fall) - (50% of i/p rise)
  cell_fall_delay= (x-coordinate pos. of 1.65v - x-coordinate pos. of 1.65v)
                 = (8.07657*e-19) - (8.05*e-19)
                 = 0.02657 ns
                 
-                ![Screenshot from 2024-08-30 18-26-33](https://github.com/user-attachments/assets/9636b765-cf0f-4b80-9bd0-c28927982734)
+   ![Screenshot from 2024-08-30 18-26-33](https://github.com/user-attachments/assets/9636b765-cf0f-4b80-9bd0-c28927982734)
 
 
 
