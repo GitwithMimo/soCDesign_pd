@@ -304,6 +304,42 @@ Cell characterization is the process of determining the performance characterist
 
 
 
+
+
+## DAY-3: Design Library Cell using Magic Layout and NGSPICE Characterization
+
+### CONTENTS
+
+- [VTC Spice Simulation](#vtc-spice-simulation)
+- [Concept of pre-placed cells and de-coupling capacitors:](#concept-of-pre-placed-cells-and-de-coupling-capacitors)
+- [Hands-on LABs](#hands-on-LABs--)
+- [Cell design and characterization flow:-](#cell-design-and-characterization-flow-)
+- [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
+
+
+#### VTC Spice Simulation
+VTC stands for Voltage Transfer Characteristic, which is a fundamental concept in the analysis and design of electronic circuits, particularly in the context of analog and mixed-signal integrated circuits. A VTC spice simulation refers to the process of using a SPICE (Simulation Program with Integrated Circuit Emphasis) simulator to analyze and plot the voltage transfer characteristic of a circuit.
+
+In a VTC simulation, the input voltage to a circuit is swept across a range of values, and the corresponding output voltage is recorded. The resulting plot of output voltage versus input voltage provides insight into the linearity, gain, and operating regions of the circuit. This is particularly important for understanding the behavior of amplifiers, logic gates, and other signal processing circuits.
+
+Here's a step-by-step overview of how a VTC spice simulation might be performed:
+
+   I> Circuit Design: The circuit to be analyzed is designed in a schematic capture tool that is compatible with the SPICE simulator being used.
+
+  II> Simulation Setup: The SPICE simulation is set up with the appropriate analysis type, which could be a DC sweep analysis if the goal is to plot the VTC over a range of DC input voltages.
+
+ III> Input Signal Sweep: The input voltage source is configured to sweep across the desired range of voltages. This could be from the negative supply rail to the positive supply rail, or any other relevant range.
+
+  IV> Output Measurement: The output node of the circuit is specified, and the simulator is instructed to record the voltage at this node for each input voltage step.
+
+   V> Simulation Run: The simulation is run, and the SPICE engine calculates the circuit's response to each input voltage.
+
+  VI> Data Analysis: The resulting data is plotted as a graph with input voltage on the x-axis and output voltage on the y-axis. This plot is the VTC of the circuit.
+
+ VII>  Interpretation: The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
+
+
+
        .
 
 
