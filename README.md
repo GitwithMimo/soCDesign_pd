@@ -334,7 +334,7 @@ Here's a step-by-step overview of how a VTC spice simulation might be performed:
  #### III> nput Signal Sweep: The input voltage source is configured to sweep across the desired range of voltages. This could be from the negative supply rail to the positive supply rail, or any other relevant range.
 
   #### IV> Output Measurement: 
-           The output node of the circuit is specified, and the simulator is instructed to record the voltage at this node for each input voltage step.
+   The output node of the circuit is specified, and the simulator is instructed to record the voltage at this node for each input voltage step.
 
  #### V> Simulation Run: The simulation is run, and the SPICE engine calculates the circuit's response to each input voltage.
 
@@ -342,9 +342,7 @@ Here's a step-by-step overview of how a VTC spice simulation might be performed:
 
 #### VII>  Interpretation: The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
 
-![maxresdefault](https://github.com/user-attachments/assets/bc744779-b574-4210-be73-4146152afa1a)
-
-
+![Screenshot 2024-08-31 21 19 24](https://github.com/user-attachments/assets/8687e29c-48c4-4f27-adda-fcf81aa23011)
 
 
 
@@ -358,15 +356,15 @@ For example, in a CMOS (Complementary Metal-Oxide-Semiconductor) inverter, which
 
 The switching threshold is influenced by several factors, including:
 
-    1. Device Characteristics: The physical properties of the transistors used in the circuit, such as their threshold voltage (Vth), affect the overall switching threshold of the circuit.
+   1. Device Characteristics: The physical properties of the transistors used in the circuit, such as their threshold voltage (Vth), affect the overall switching threshold of the circuit.
 
-    2. Supply Voltage: The operating voltage of the circuit can impact the switching threshold. As the supply voltage changes, the switching threshold may also shift.
+   2. Supply Voltage: The operating voltage of the circuit can impact the switching threshold. As the supply voltage changes, the switching threshold may also shift.
 
-    3. Temperature: Temperature variations can cause changes in the electrical characteristics of the transistors, which can in turn affect the switching threshold.
+   3. Temperature: Temperature variations can cause changes in the electrical characteristics of the transistors, which can in turn affect the switching threshold.
 
-    4. Process Variations: Manufacturing variations can lead to differences in the electrical properties of transistors, which can influence the switching threshold of the circuit.
+   4. Process Variations: Manufacturing variations can lead to differences in the electrical properties of transistors, which can influence the switching threshold of the circuit.
 
-    5. Load Capacitance: The capacitive load connected to the output of the circuit can affect the switching threshold due to the dynamic behavior of the circuit during switching.
+   5. Load Capacitance: The capacitive load connected to the output of the circuit can affect the switching threshold due to the dynamic behavior of the circuit during switching.
 
 ![2BqKy](https://github.com/user-attachments/assets/98bd56a3-610a-48cb-a8bc-629143427dbd)
 
@@ -378,24 +376,24 @@ The switching threshold is influenced by several factors, including:
 #### Static Simulation
 Static simulation, also known as DC analysis, involves analyzing the circuit's behavior at DC (Direct Current) steady-state conditions. This type of simulation is used to determine the following characteristics:
 
-    Voltage Transfer Characteristic (VTC): The VTC plot shows the relationship between the input voltage (Vin) and the output voltage (Vout) of the inverter. It helps in understanding the transition between the logic levels (0 and 1) and the noise margins.
+   Voltage Transfer Characteristic (VTC): The VTC plot shows the relationship between the input voltage (Vin) and the output voltage (Vout) of the inverter. It helps in understanding the transition between the logic levels (0 and 1) and the noise margins.
 
-    a- Switching Threshold (V_th): The input voltage at which the inverter switches from one logic state to another. Ideally, for a symmetrical VTC, the switching threshold is at Vdd/2, where Vdd is the supply voltage.
+   a- Switching Threshold (V_th): The input voltage at which the inverter switches from one logic state to another. Ideally, for a symmetrical VTC, the switching threshold is at Vdd/2, where Vdd is the supply voltage.
 
-    b- Noise Margins: The maximum noise voltage that can be tolerated at the input while the output remains in the correct logic state.
+   b- Noise Margins: The maximum noise voltage that can be tolerated at the input while the output remains in the correct logic state.
 
-    c- Static Power Dissipation: The power consumed by the inverter when it is in a stable state (not switching). This is typically very low in CMOS circuits due to the low leakage currents.
+   c- Static Power Dissipation: The power consumed by the inverter when it is in a stable state (not switching). This is typically very low in CMOS circuits due to the low leakage currents.
 
 #### Dynamic Simulation
 Dynamic simulation, also known as transient analysis, involves analyzing the circuit's behavior over time as it responds to time-varying input signals. This type of simulation is used to determine the following characteristics:
 
-    a- Propagation Delay (t_p): The time it takes for the output to change in response to a change in the input. It is typically measured as the time from the 50% point of the input transition to the 50% point of the output transition.
+   a- Propagation Delay (t_p): The time it takes for the output to change in response to a change in the input. It is typically measured as the time from the 50% point of the input transition to the 50% point of the output transition.
 
-    b- Rise Time (t_r) and Fall Time (t_f): The times it takes for the output to transition from 10% to 90% (rise time) and from 90% to 10% (fall time) of the output voltage swing.
+   b- Rise Time (t_r) and Fall Time (t_f): The times it takes for the output to transition from 10% to 90% (rise time) and from 90% to 10% (fall time) of the output voltage swing.
 
-    c- Power Consumption: The dynamic power consumed by the inverter during switching, which is a function of the switching frequency, load capacitance, and supply voltage.
+   c- Power Consumption: The dynamic power consumed by the inverter during switching, which is a function of the switching frequency, load capacitance, and supply voltage.
 
-    d- Transient Response: The overall response of the inverter to input signals, including overshoot, undershoot, and ringing.
+   d- Transient Response: The overall response of the inverter to input signals, including overshoot, undershoot, and ringing.
     
 ![maxresdefaul4t](https://github.com/user-attachments/assets/5a72fdab-6149-4377-a1b9-b53323efa131)
 
