@@ -306,6 +306,9 @@ Cell characterization is the process of determining the performance characterist
 
 
 
+
+
+
 ## DAY-3: Design Library Cell using Magic Layout and NGSPICE Characterization
 
 ### CONTENTS
@@ -313,7 +316,7 @@ Cell characterization is the process of determining the performance characterist
 - [VTC Spice Simulation](#vtc-spice-simulation)
 - [Concept on Switching Threshold](#concept-on-switching-threshold)
 - [Static And Dynamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
-- [Cell design and characterization flow:-](#cell-design-and-characterization-flow-)
+- [Layout and CMOS Fabrication Process](#layout-and-cmos-fabrication-process)
 - [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
 
 
@@ -340,6 +343,7 @@ Here's a step-by-step overview of how a VTC spice simulation might be performed:
 #### VII>  Interpretation: The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
 
 ![maxresdefault](https://github.com/user-attachments/assets/bc744779-b574-4210-be73-4146152afa1a)
+
 
 
 
@@ -392,6 +396,82 @@ Dynamic simulation, also known as transient analysis, involves analyzing the cir
     c- Power Consumption: The dynamic power consumed by the inverter during switching, which is a function of the switching frequency, load capacitance, and supply voltage.
 
     d- Transient Response: The overall response of the inverter to input signals, including overshoot, undershoot, and ringing.
+    
+![maxresdefaul4t](https://github.com/user-attachments/assets/5a72fdab-6149-4377-a1b9-b53323efa131)
+
+
+
+### Layout and CMOS Fabrication Process
+
+The CMOS (Complementary Metal-Oxide-Semiconductor) fabrication process is a complex series of steps used to manufacture integrated circuits. CMOS technology is widely used in modern electronics due to its low power consumption and high-density integration capabilities. The fabrication process involves several key steps, including substrate preparation, doping, oxidation, photolithography, etching, and metallization. Here is an overview of the CMOS fabrication process:
+1. Substrate Preparation
+
+    Starting Material: The process begins with a pure silicon wafer, which serves as the substrate.
+    Cleaning: The wafer is thoroughly cleaned to remove any impurities.
+
+2. Oxidation
+
+    Thermal Oxidation: A layer of silicon dioxide (SiO2) is grown on the surface of the silicon wafer. This oxide layer acts as an insulator and also serves as a mask for subsequent doping processes.
+
+3. Photolithography
+
+    Photoresist Application: A light-sensitive polymer called photoresist is applied to the wafer surface.
+    Exposure and Development: The wafer is exposed to ultraviolet (UV) light through a mask that contains the desired pattern. The exposed photoresist is then developed, leaving a patterned layer on the wafer.
+
+4. Etching
+
+    Wet or Dry Etching: The areas of the wafer not protected by the photoresist are etched away using either wet chemicals or dry plasma etching.
+
+5. Doping
+
+    Ion Implantation: Selected areas of the wafer are doped with impurities (dopants) such as boron or phosphorus to create n-type or p-type regions. This process alters the electrical properties of the silicon, creating the necessary semiconductor characteristics.
+
+6. Isolation
+
+    Local Oxidation of Silicon (LOCOS): An oxide layer is grown in selected areas to isolate different components of the circuit.
+    Trench Isolation: Alternatively, trenches can be etched and filled with oxide to achieve isolation.
+
+7. Transistor Formation
+
+    Gate Oxide Growth: A thin layer of oxide is grown on the surface where the transistors will be formed.
+
+    Polysilicon Deposition: A layer of polysilicon is deposited and patterned to form the gates of the transistors.
+
+    Spacer Formation: Spacers are created on the sides of the gate to control the subsequent doping process.
+
+    Source/Drain Implantation: Dopants are implanted to form the source and drain regions of the transistors.
+
+8. Silicidation
+
+    Silicide Formation: A silicide layer (e.g., tungsten silicide) is formed on top of the polysilicon gate and the source/drain regions to reduce resistance.
+
+9. Interlayer Dielectric and Planarization
+
+    Dielectric Deposition: A layer of insulating material (e.g., silicon dioxide) is deposited over the entire wafer.
+    Chemical Mechanical Polishing (CMP): The wafer surface is planarized using CMP to ensure a smooth surface for subsequent metallization.
+
+10. Metallization
+
+    Metal Layers: Multiple layers of metal (e.g., aluminum or copper) are deposited and patterned to form the interconnections between transistors and other components.
+    Contact and Via Formation: Contacts and vias are etched and filled with metal to connect the transistors to the metal layers.
+
+11. Passivation
+
+    Passivation Layer: A final layer of insulating material is deposited to protect the circuit from external contaminants.
+
+12. Testing and Packaging
+
+    Wafer Probing: The wafer is tested to identify any defective chips.
+
+    Dicing: The wafer is cut into individual chips (dice).
+
+    Packaging: The chips are mounted in packages, which are then sealed to protect the delicate circuitry.
+
+    Final Testing: The packaged chips are tested again to ensure they meet the required specifications.
+
+![Assigning-the-names-of-NMOS-and-PMOS](https://github.com/user-attachments/assets/936498d3-3e2e-41d5-8ee4-da89fd7c5e7c)
+
+
 
 
 
