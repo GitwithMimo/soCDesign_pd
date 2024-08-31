@@ -482,7 +482,7 @@ The CMOS (Complementary Metal-Oxide-Semiconductor) fabrication process is a comp
 
 ![Screenshot from 2024-08-29 17-35-05](https://github.com/user-attachments/assets/b3901dc3-ed2d-48a2-a770-df2566893c80)
 
-here the the i/o pins are congestedand and overlapped:
+here the the i/o pins are congested and overlapped:
 ![Screenshot from 2024-08-29 17-40-03](https://github.com/user-attachments/assets/b753f254-58f2-4765-85a2-62cb961207a2)
 
 #### 2. Inverter layout in Magic tool
@@ -499,7 +499,7 @@ here the the i/o pins are congestedand and overlapped:
 
 ![Screenshot from 2024-08-29 19-10-45](https://github.com/user-attachments/assets/f35f1939-cda1-4ecf-a890-53af26cb7bce)
 
-#### 4. spice tecgnology file, simulatio and output graph
+#### 4. spice tecgnology file, simulation and output graph
 
 ![Screenshot from 2024-08-29 19-10-45](https://github.com/user-attachments/assets/6f227d4a-0ba5-44cf-a165-52d39c790ccf)
 
