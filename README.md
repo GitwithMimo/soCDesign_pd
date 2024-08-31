@@ -311,7 +311,7 @@ Cell characterization is the process of determining the performance characterist
 ### CONTENTS
 
 - [VTC Spice Simulation](#vtc-spice-simulation)
-- [Concept of pre-placed cells and de-coupling capacitors:](#concept-of-pre-placed-cells-and-de-coupling-capacitors)
+- [Concept on Switching Threshold](#concept-on-switching-threshold)
 - [Hands-on LABs](#hands-on-LABs--)
 - [Cell design and characterization flow:-](#cell-design-and-characterization-flow-)
 - [Timing threshold and Propagation delay:-](#timing-threshold-and-propagation-delay-)
@@ -338,9 +338,35 @@ Here's a step-by-step overview of how a VTC spice simulation might be performed:
 
  VII>  Interpretation: The VTC is analyzed to determine the circuit's performance characteristics, such as gain, input offset voltage, output swing, and the presence of any non-linearities or distortion.
 
+![maxresdefault](https://github.com/user-attachments/assets/bc744779-b574-4210-be73-4146152afa1a)
 
 
-       .
+
+
+#### Concept on Switching Threshold
+
+The concept of the switching threshold is crucial in the context of digital circuits, particularly in logic gates and transistors. The switching threshold refers to the input voltage level at which the circuit transitions from one state to another, typically from a low (logic 0) to a high (logic 1) state or vice versa.
+
+In a digital circuit, the switching threshold is designed to be at a specific voltage level to ensure reliable operation and to minimize the effects of noise and signal degradation. The exact value of the switching threshold can vary depending on the technology and design of the circuit, but it is typically set near the midpoint of the supply voltage range.
+
+For example, in a CMOS (Complementary Metal-Oxide-Semiconductor) inverter, which is a fundamental building block of digital logic, the switching threshold is ideally at the midpoint of the supply voltage (Vdd/2). This ensures that the inverter has equal noise margins for both high and low input levels.
+
+The switching threshold is influenced by several factors, including:
+
+    1. Device Characteristics: The physical properties of the transistors used in the circuit, such as their threshold voltage (Vth), affect the overall switching threshold of the circuit.
+
+    2. Supply Voltage: The operating voltage of the circuit can impact the switching threshold. As the supply voltage changes, the switching threshold may also shift.
+
+    3. Temperature: Temperature variations can cause changes in the electrical characteristics of the transistors, which can in turn affect the switching threshold.
+
+    4. Process Variations: Manufacturing variations can lead to differences in the electrical properties of transistors, which can influence the switching threshold of the circuit.
+
+    5. Load Capacitance: The capacitive load connected to the output of the circuit can affect the switching threshold due to the dynamic behavior of the circuit during switching.
+
+![2BqKy](https://github.com/user-attachments/assets/98bd56a3-610a-48cb-a8bc-629143427dbd)
+
+
+       
 
 
 
