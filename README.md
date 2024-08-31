@@ -541,9 +541,21 @@ fall_transition = (20% of 3.3v) - (80% of 3.3v)
    ![Screenshot from 2024-08-30 18-26-33](https://github.com/user-attachments/assets/9636b765-cf0f-4b80-9bd0-c28927982734)
 
 
+   ##### 6. Introduction to Magic tool and DRC
 
-       
+![Screenshot from 2024-08-30 23-22-53](https://github.com/user-attachments/assets/23ff1ac9-6b2f-440e-843b-77a82dc0635f)
 
+![Screenshot from 2024-08-30 23-37-07](https://github.com/user-attachments/assets/0c2c91cc-a865-477c-abdc-9c469bd7f1c7)
+
+![Screenshot from 2024-08-30 23-38-48](https://github.com/user-attachments/assets/6c03bc22-8909-492f-ad8d-6a04e9bc2516)
+
+![Screenshot from 2024-08-31 00-13-06](https://github.com/user-attachments/assets/e9368ab6-47cb-4a22-b284-549108f167b9)
+
+![Screenshot from 2024-08-31 00-22-14](https://github.com/user-attachments/assets/d3aa46d6-bbde-4273-b744-910a597e6f75)
+
+![Screenshot from 2024-08-31 00-27-51](https://github.com/user-attachments/assets/3eb2dc89-30be-4c20-a408-adec09a08a4b)
+
+![Screenshot from 2024-08-31 00-41-17](https://github.com/user-attachments/assets/6aa6b086-f3a1-4599-8aa3-f7cc21689653)
 
 
 
