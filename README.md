@@ -565,15 +565,15 @@ fall_transition = (20% of 3.3v) - (80% of 3.3v)
 
 ### CONTENTS
 
-- [1. Delay Table](#1--delay-table)
+- [1-Delay Table](#1-delay-table)
 - [2-Setup time and Hold time of Flop](#2-setup-time-and-hold-time-of-flop)
 - [3-Clock tree routing and buffering](#3-clock-tree-routing-and-buffering)
-- [LABs Exercise](#labs-exercise)
+- [4-LABs Steps](#4-labs-steps)
 
 
 
 
-### 1. Delay Table
+### 1-Delay Table
 
 In physical design, a delay table is a data structure used to model the delay characteristics of standard cells or interconnects in a digital circuit.
 
@@ -700,6 +700,83 @@ Clock Latency: Clock tree buffering and routing also ensure that the clock signa
 #### e. Post-CTS Optimization:
 After the clock tree is synthesized, further optimization steps like Clock Tree Optimization (CTO) and Post-CTS Optimization might be performed to fine-tune the clock network, ensuring that all timing requirements are met.
 Timing Analysis: Tools perform static timing analysis (STA) to verify that the clock tree meets the required timing constraints, and any violations are corrected by adjusting the clock tree design.
+
+![Screenshot from 2024-09-03 22-05-22](https://github.com/user-attachments/assets/3592f0f9-aa1b-4356-878a-5bb2c7cdaa2f)
+
+![Screenshot from 2024-09-03 22-05-45](https://github.com/user-attachments/assets/685395e4-8914-46e9-b331-f2ab999e09d5)
+
+
+### 4-LABs Steps:
+
+tracks.info 
+![Screenshot from 2024-09-01 15-25-09](https://github.com/user-attachments/assets/3a412cc9-1e37-40b5-bec7-4e8fed3a55b3)
+![Screenshot from 2024-09-01 15-25-16](https://github.com/user-attachments/assets/4a93476f-a381-4a95-a628-832e278704de)
+
+Inverter_mag
+![Screenshot from 2024-09-01 15-41-31](https://github.com/user-attachments/assets/9b3f5218-fdfa-4fb1-b810-a084c765da39)
+![Screenshot from 2024-09-01 15-51-50](https://github.com/user-attachments/assets/d5e6230f-b442-4d91-9899-878e348cc3b0)
+![Screenshot from 2024-09-01 15-57-15](https://github.com/user-attachments/assets/f49a4b1e-9590-4fbb-84c2-9763d7a4256f)
+![Screenshot from 2024-09-01 15-59-45](https://github.com/user-attachments/assets/8fe708d2-f9f6-4a1b-9cdf-a28bec8df153)
+
+copying the inverter lef to my design/src
+![Screenshot from 2024-09-01 16-16-05](https://github.com/user-attachments/assets/e45d8af5-935d-4ea8-9bfb-341bc5377611)
+
+lib file
+![Screenshot from 2024-09-01 16-18-24](https://github.com/user-attachments/assets/cb294fc0-451a-4f43-9cc9-a137a1a7f700)
+
+config.tcl
+![Screenshot from 2024-09-01 17-20-31](https://github.com/user-attachments/assets/afcb408e-0f43-4c86-af0c-37de6f6cafa3)
+![Screenshot from 2024-09-01 22-11-26](https://github.com/user-attachments/assets/40ed353e-83e3-4df3-84f2-552575f021fc)
+
+run_synthesis
+![Screenshot from 2024-09-01 22-11-31](https://github.com/user-attachments/assets/e94502a2-7a97-48db-becd-fa80f0b628e5)
+![Screenshot from 2024-09-01 22-39-37](https://github.com/user-attachments/assets/38b4593b-fedd-4933-971a-d8d8adc6a5fe)
+![Screenshot from 2024-09-02 12-59-04](https://github.com/user-attachments/assets/26524dc2-860f-4336-840e-1b7c8ffb5a62)
+
+run_floorplan
+![Screenshot from 2024-09-02 13-06-45](https://github.com/user-attachments/assets/4e7932f2-1f6d-4fe1-a8c4-fe3f00e71ceb)
+
+run init_floorplan
+run place_io
+tap_decap_or
+![Screenshot from 2024-09-02 13-06-45](https://github.com/user-attachments/assets/7349c5b1-2318-4be3-b6bf-61d4cb4ba5ab)
+![Screenshot from 2024-09-02 13-10-47](https://github.com/user-attachments/assets/ae73e2b6-ee21-4935-b970-8e6d12e35677)
+
+run_placement
+![Screenshot from 2024-09-02 21-46-22](https://github.com/user-attachments/assets/99f39301-b6c0-42dd-b23d-578481a08dc2)
+
+lay-out
+![Screenshot from 2024-09-02 21-54-33](https://github.com/user-attachments/assets/fc89caf7-c45f-484e-8e87-0a0fbf510894)
+![7cdb4291-03a6-44e5-8e6a-a2f0253515f5](https://github.com/user-attachments/assets/c727abeb-2082-4da4-9b38-0cf48d121e74)
+
+my_base.sdc
+![Screenshot from 2024-09-02 23-52-01](https://github.com/user-attachments/assets/78fedd02-a835-4856-bd02-83fceb7bfe2b)
+
+sta.conf
+![Screenshot from 2024-09-02 23-52-20](https://github.com/user-attachments/assets/c5531bfa-1e00-4438-b2b6-9e2c90ea4210)
+![Screenshot from 2024-09-03 00-01-51](https://github.com/user-attachments/assets/43d4cd03-c20a-4e49-8562-b9e73c88674f)
+
+again run_synthesis, then floorplan, placement
+![Screenshot from 2024-09-03 00-07-12](https://github.com/user-attachments/assets/445a92eb-20dd-4199-923b-562bd6dace9d)
+![Screenshot from 2024-09-03 00-07-25](https://github.com/user-attachments/assets/24fab7a5-3b58-4d4a-9861-24a821ad854d)
+![Screenshot from 2024-09-03 11-41-37](https://github.com/user-attachments/assets/5ce247e1-0dcb-4227-b271-db97f740a71c)
+
+slacl reducing
+![Screenshot from 2024-09-03 01-54-15](https://github.com/user-attachments/assets/c13e2e37-9692-472a-876b-9025fbcd8049)
+![Screenshot from 2024-09-03 11-41-37](https://github.com/user-attachments/assets/c8ed7b85-aeff-41b9-bebc-d19362855119)
+
+openroad
+![Screenshot from 2024-09-03 12-01-28](https://github.com/user-attachments/assets/4d9e76e9-02b2-4723-91cf-92d7ea99386b)
+
+CTS run
+![Screenshot from 2024-09-03 15-33-21](https://github.com/user-attachments/assets/e09ddcfb-b9a3-434a-812d-ca5fa73112fb)
+![Screenshot from 2024-09-03 11-43-15](https://github.com/user-attachments/assets/44374bb3-3e70-4ff5-874b-48292ec306b2)
+![Screenshot from 2024-09-03 12-01-28](https://github.com/user-attachments/assets/8285663a-ce94-4f0a-b952-4de128c9c252)
+![Screenshot from 2024-09-03 15-33-21](https://github.com/user-attachments/assets/4e3815c9-d0f7-4294-957e-73ac623f152d)
+![Screenshot from 2024-09-03 15-35-15](https://github.com/user-attachments/assets/b96fa9ef-4dc0-4fe3-ba8f-81833b9023a1)
+
+
+
 
 
 
