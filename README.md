@@ -565,16 +565,15 @@ fall_transition = (20% of 3.3v) - (80% of 3.3v)
 
 ### CONTENTS
 
-- [1. Delay Table](#1-delay-table)
+- [1. Delay Table](#1--delay-table)
 - [2-Setup time and Hold time of Flop](#2-setup-time-and-hold-time-of-flop)
-- [3-Static And Dynamic Simulation of CMOS Inverter](#3-static-and-dynamic-simulation-of-cmos-inverter)
-- [4-Clock tree routing and buffering](#4-clock-tree-routing-and-buffering)
+- [3-Clock tree routing and buffering](#3-clock-tree-routing-and-buffering)
 - [LABs Exercise](#labs-exercise)
 
 
 
 
-### Delay Table
+### 1. Delay Table
 
 In physical design, a delay table is a data structure used to model the delay characteristics of standard cells or interconnects in a digital circuit.
 
@@ -605,7 +604,7 @@ Optimization: Helps in identifying critical paths and optimizing them to improve
 
 
 
-### Setup time and Hold time of Flop
+### 2-Setup time and Hold time of Flop
 
 #### Set Up Time Analysis
 Setup time is the minimum time period before the clock edge during which the data input must be stable.
@@ -651,11 +650,11 @@ Hold Time Violations: Can result in data corruption as new data overwrites old d
 
 
 
-### 4-Clock tree routing and buffering
+### 3-Clock tree routing and buffering
 
 Clock tree routing and buffering are crucial steps in the physical design phase of integrated circuit (IC) design. These steps ensure that the clock signal is distributed efficiently and uniformly across the entire chip to all sequential elements (like flip-flops) with minimal skew and latency.
 
-#### 1. Clock Tree Synthesis (CTS):
+#### a. Clock Tree Synthesis (CTS):
 #### Purpose: The goal of clock tree synthesis is to distribute the clock signal from a single clock source (usually a Phase-Locked Loop (PLL) or a clock generator) to all the sequential elements in the design (like flip-flops) with minimal skew and balanced delays.
 
 #### Challenges:
@@ -665,7 +664,7 @@ Clock Latency: The delay from the clock source to a flip-flop or other sequentia
 
 #### Power Consumption: Clock networks are often the most power-consuming part of the chip. Optimizing for lower power while maintaining performance is crucial.
 
-#### 2. Clock Tree Routing:
+#### b. Clock Tree Routing:
 
 #### Tree Structure: The clock distribution network is usually constructed as a tree (hence the name "clock tree"). This tree structure helps in balancing the delays and skew.
 
@@ -680,7 +679,7 @@ Routing Techniques:
 Minimal Skew Routing: Ensuring that all paths from the clock source to the clock sinks (sequential elements) are balanced to minimize skew.
 Buffered Clock Tree: Inserting buffers along the clock tree to manage delay and drive strength, ensuring that the clock signal reaches all parts of the circuit with sufficient strength and minimal degradation.
 
-#### 3. Clock Tree Buffering:
+#### c. Clock Tree Buffering:
 #### Why Buffers are Needed:
 Load Management: The clock signal needs to drive a large number of flip-flops and other clocked elements. Buffers are used to amplify the clock signal and drive these loads effectively.
 Delay Control: Buffers help in balancing the delay in different paths of the clock tree, which is crucial for minimizing skew.
@@ -693,12 +692,12 @@ Buffer Insertion:
 Buffers are strategically inserted at points in the clock tree where the clock signal needs to be amplified or where delay needs to be controlled.
 The placement of these buffers is determined during the Clock Tree Synthesis process using EDA tools, which optimize for delay, skew, and power consumption.
 
-#### 4. Skew and Latency Management:
+#### d. Skew and Latency Management:
 Zero-Skew Clock Tree: An ideal clock tree would have zero skew, meaning all flip-flops receive the clock signal at the exact same time. While practically impossible, the goal is to minimize skew as much as possible.
 Useful Skew: Sometimes, intentional skew is introduced to improve timing in certain paths. This is known as useful skew and can help in meeting setup and hold time constraints.
 Clock Latency: Clock tree buffering and routing also ensure that the clock signal arrives at the flip-flops with the desired latency, which is crucial for timing closure.
 
-#### 5. Post-CTS Optimization:
+#### e. Post-CTS Optimization:
 After the clock tree is synthesized, further optimization steps like Clock Tree Optimization (CTO) and Post-CTS Optimization might be performed to fine-tune the clock network, ensuring that all timing requirements are met.
 Timing Analysis: Tools perform static timing analysis (STA) to verify that the clock tree meets the required timing constraints, and any violations are corrected by adjusting the clock tree design.
 
