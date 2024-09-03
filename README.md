@@ -11,6 +11,10 @@
 
 [DAY-4: Pre Lay-out Timing Analysis and Importance of Good clock Tree](#day-4-pre-lay-out-timing-analysis-and-importance-of-good-clock-tree)
 
+[DAY-5: Final Steps for RTL2GDS Using TritonROUTE and openSTA](#day-5-fina-steps-for-rtl2gds-using-tritonroute-and-opensta)
+
+
+
 ## ASIC Design Flow
 ASIC (Application-Specific Integrated Circuit) design flow refers to the series of steps involved in designing a custom chip tailored for a specific application. Unlike general-purpose ICs, ASICs are optimized for particular tasks, making them highly efficient for their intended purpose. The design flow is a structured process that ensures the final chip meets all functional, performance, and manufacturability requirements.
 
@@ -779,9 +783,184 @@ CTS run
 
 
 
+## DAY-5: Final Steps for RTL2GDS Using TritonROUTE and openSTA
+
+### CONTENTS
+
+- [1-Routing and DRC](#1-routing-and-drc)
+- [2-Global routing and Detailed routing](#2-global-routing-and-detailed-routing)
+- [3-Maze routing and Steiner tree algorithm](#3-maze-routing-and-steiner-tree-algorithm)
+- [4-Power distribution and network routing](#4-power-distribution-and-network-routing)
 
 
 
+### 1-Routing and DRC
+Routing and Design Rule Check (DRC) are key steps in the physical design process of integrated circuits (ICs). They play crucial roles in ensuring that the design is manufacturable and meets all the required electrical and physical constraints.
+
+#### a. Routing:
+Routing is the process of connecting the various components (standard cells, macros, IOs, etc.) in an IC design with metal interconnects according to the netlist generated during the synthesis stage.
+
+#### Key Aspects of Routing:
+Global Routing:
+
+Purpose: Provides an abstract, coarse-grained plan of how the connections will be made across different regions of the chip. It divides the chip area into a grid and assigns paths to nets without detailed geometry.
+Outcome: Guides the detailed routing stage by giving an overall connectivity layout.
+Detailed Routing:
+
+Purpose: Converts the global routing plan into actual geometrical paths on the metal layers of the chip.
+Metal Layers: The routing is done using different metal layers, with lower layers typically used for local connections and higher layers for long-distance or global connections.
+
+#### Routing Algorithms:
+Maze Routing: Finds the shortest path between two points, avoiding obstacles.
+Channel Routing: Manages routing in channels between rows of cells.
+Grid-Based Routing: Uses a grid to guide the routing paths and ensure that they follow design rules.
+Routing Challenges:
+
+Congestion: Too many wires trying to pass through the same area can lead to congestion, which can cause timing issues or even make routing impossible.
+Crosstalk: Signals on adjacent wires can interfere with each other, leading to noise and potential errors.
+Delay: Longer or more resistive paths can introduce delays that affect the timing of the circuit.
+Routing Constraints:
+
+#### Timing Constraints: Ensuring that the routed paths meet the required timing (setup and hold times).
+Power Constraints: Minimizing power consumption and ensuring that power distribution is balanced.
+Signal Integrity: Maintaining signal quality by minimizing noise, crosstalk, and other electrical issues.
+
+#### b. Design Rule Check (DRC):
+Design Rule Check (DRC) is a verification step in the physical design process that ensures the layout of the chip adheres to a set of predefined rules provided by the semiconductor foundry. These rules are necessary to guarantee that the design can be manufactured reliably.
+
+#### Key Aspects of DRC:
+Design Rules:
+
+Spacing Rules: Minimum distances between different metal layers, vias, or other features to avoid shorts and ensure manufacturability.
+Width Rules: Minimum and maximum width of wires to ensure that they can be manufactured correctly and carry the required current without issues.
+Enclosure Rules: Requirements for how different layers must overlap or enclose each other (e.g., metal layers and vias).
+Alignment Rules: Ensure that different layers align correctly to avoid misalignment during manufacturing.
+
+DRC Tools:
+
+Tools like Calibre, Mentor Graphics, or Cadence's Assura are commonly used to run DRC checks. These tools take the physical layout as input and verify it against the foundry's design rules.
+Common DRC Violations:
+
+Shorts: When two wires or components that should not be connected are too close or overlap.
+Opens: Missing connections due to routing errors or insufficient overlap of layers.
+Minimum Width Violations: Wires or features that are too narrow and might not be reliably manufactured.
+Spacing Violations: Features that are too close together, which can cause shorts or manufacturing issues.
+DRC Correction:
+
+After running a DRC, any violations are flagged, and the design must be corrected. This may involve adjusting the layout, rerouting wires, or modifying cell placement.
+
+![Screenshot from 2024-09-04 00-25-49](https://github.com/user-attachments/assets/de745192-63fb-4d8e-81cc-4091f6333ff6)
+![Screenshot from 2024-09-04 00-26-08](https://github.com/user-attachments/assets/9b3dd792-b4b0-4183-943d-ea7bd653bcb2)
+
+
+
+### 2-Global routing and Detailed routing
+
+#### a. Global Routing:
+
+##### Purpose: Provides a high-level, coarse plan for connecting different regions of the chip. It divides the chip into grids and assigns general paths for connections without specifying exact wire routes.
+##### Outcome: Guides the detailed routing stage by outlining broad paths for signals to follow, helping to manage congestion and ensure that connections can be made.
+
+#### b. Detailed Routing:
+
+##### Purpose: Converts the global routing plan into precise, geometric wire routes on specific metal layers, connecting all components according to the design's netlist.
+##### Outcome: Finalizes the exact paths for each wire, ensuring they meet design rules (like spacing and width), and resolves any conflicts or congestion identified during global routing.
+
+
+### 3-Maze routing and Steiner tree algorithm
+
+#### a. Maze Routing:
+
+Purpose: Maze routing is an algorithm used to find a path between two points (e.g., from a source to a destination pin) in a grid while avoiding obstacles.
+
+How It Works:
+
+The grid is treated as a matrix, where each cell represents a possible location for the wire. Obstacles like other wires, cells, or blocked areas are marked as unavailable.
+The algorithm explores all possible paths from the source to the destination, usually using a breadth-first search (BFS) approach.
+It expands from the source node by checking neighboring cells until it reaches the destination.
+The shortest path found through this exploration is chosen as the route.
+Pros:
+
+Optimal Path: Guarantees finding the shortest path if one exists.
+Flexibility: Can handle complex obstacles and multiple routing layers.
+Cons:
+
+Computationally Expensive: Can be slow and resource-intensive, especially for large designs.
+Not Always Practical for Large Grids: The algorithm can become infeasible for very large or densely populated grids due to its exhaustive nature.
+
+#### b. Steiner Tree Algorithm:
+Purpose: The Steiner tree algorithm is used to connect multiple points (e.g., multiple pins that need to be connected by a single net) with the shortest possible interconnect length, minimizing the total wire length.
+
+How It Works:
+
+The algorithm starts by creating a minimal spanning tree (MST) that connects all the target points (e.g., pins).
+Steiner points, which are additional points not originally in the set of target points, are introduced to reduce the overall wire length. These points act as intermediate nodes that help in minimizing the total connection length.
+The resulting structure is a Steiner tree, which is a tree that connects all target points (and possibly additional Steiner points) with the minimal total interconnect length.
+Pros:
+
+Minimized Wire Length: Produces a routing solution with minimal total wire length, which is beneficial for reducing delay and power consumption.
+Efficient for Multi-Terminal Nets: Particularly useful for nets that need to connect more than two pins.
+Cons:
+
+Complexity: Finding the exact Steiner tree is an NP-hard problem, meaning it can be computationally expensive for large nets.
+Approximation: Often, heuristic or approximate methods are used to find a near-optimal Steiner tree, which might not be the absolute minimum.
+
+![Screenshot from 2024-09-04 00-45-15](https://github.com/user-attachments/assets/f10eb3e1-abcd-49d3-8ef7-f201b5c945ba)
+![Screenshot from 2024-09-04 00-45-34](https://github.com/user-attachments/assets/e14c7003-6fda-431b-8e08-100263c39ef2)
+![Screenshot from 2024-09-04 00-45-49](https://github.com/user-attachments/assets/e8755cd7-549d-4899-9d29-79c55d5f5031)
+
+
+
+### 4-Power distribution and network routing
+
+#### a. Power Distribution:
+Power distribution in IC design refers to the process of delivering power from the external power sources (like power pads or pins) to every component within the chip, including logic gates, flip-flops, memory cells, and other circuits.
+
+##### Key Concepts:
+
+##### Power and Ground Rails:
+These are the main conductors that distribute power (VDD) and ground (VSS) across the chip. They are typically implemented as wide metal lines running across the chip to minimize resistance and voltage drop.
+
+##### Power Grids:
+A power grid is a network of horizontal and vertical metal lines that form a mesh-like structure across the chip. This grid ensures that power is distributed uniformly to all areas of the chip.
+VDD Grid: Carries the supply voltage.
+VSS Grid: Carries the ground potential.
+
+##### Power Rings:
+Rings of metal lines surrounding certain regions or blocks on the chip, providing a stable supply of power and grounding. They help in minimizing noise and ensuring a reliable power supply.
+
+##### Power Straps:
+Wider metal lines or groups of parallel lines that provide robust connections between the power grid and the power sources. These straps help reduce resistance and voltage drop.
+
+##### Decoupling Capacitors:
+Capacitors placed close to the power pins of circuits to stabilize the power supply by filtering out noise and compensating for sudden changes in current demand.
+
+#### b. Power Network Routing:
+Power network routing involves the detailed placement and routing of the power distribution network (PDN) on the chip, ensuring that all blocks and standard cells receive adequate power.
+
+##### Steps in Power Network Routing:
+
+##### Placement of Power Pads:
+Power pads (VDD, VSS) are placed around the periphery of the chip or in specific locations within the chip. These pads connect the internal power network to the external power supply.
+
+##### Creation of Power Grid:
+A grid of metal layers is laid out across the chip to distribute the power. The grid usually spans multiple metal layers, with the lower layers used for local distribution and the upper layers for global distribution.
+
+##### Power Rings and Straps:
+Power rings are placed around the periphery of major blocks (e.g., memory blocks, large logic blocks) to ensure a stable power supply.
+Power straps are used to connect the power rings and the power grid, ensuring that current can flow efficiently from the power pads to all parts of the chip.
+
+##### Via Placement:
+Vias are used to connect different metal layers within the power grid. Multiple vias are often placed in parallel to reduce resistance and ensure reliable current flow.
+
+##### IR Drop Analysis:
+After routing the power network, an IR drop analysis is performed to ensure that the voltage drop across the power grid is within acceptable limits. Excessive IR drop can cause circuits to malfunction due to insufficient voltage levels.
+
+##### Electromigration Check:
+Electromigration refers to the gradual movement of metal atoms in the power grid due to high current densities, which can lead to failures. The power network is checked to ensure that the current density in all metal lines is below the safe limits to avoid electromigration.
+
+##### Noise and Decoupling:
+The power network is designed to minimize noise (e.g., ground bounce) by carefully placing decoupling capacitors and ensuring that the grid structure is robust.
 
 
 
