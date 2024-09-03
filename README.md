@@ -791,6 +791,8 @@ CTS run
 - [2-Global routing and Detailed routing](#2-global-routing-and-detailed-routing)
 - [3-Maze routing and Steiner tree algorithm](#3-maze-routing-and-steiner-tree-algorithm)
 - [4-Power distribution and network routing](#4-power-distribution-and-network-routing)
+- [5-TritonRoute features](#5-tritonroute-features)
+- [6-Labs practise](#6-labs-practise)
 
 
 
@@ -865,6 +867,8 @@ After running a DRC, any violations are flagged, and the design must be correcte
 
 ##### Purpose: Converts the global routing plan into precise, geometric wire routes on specific metal layers, connecting all components according to the design's netlist.
 ##### Outcome: Finalizes the exact paths for each wire, ensuring they meet design rules (like spacing and width), and resolves any conflicts or congestion identified during global routing.
+
+![Screenshot from 2024-09-04 01-01-55](https://github.com/user-attachments/assets/60b5b7d6-ed70-4ab7-8ffc-c50d98ec4ba1)
 
 
 ### 3-Maze routing and Steiner tree algorithm
@@ -961,6 +965,68 @@ Electromigration refers to the gradual movement of metal atoms in the power grid
 
 ##### Noise and Decoupling:
 The power network is designed to minimize noise (e.g., ground bounce) by carefully placing decoupling capacitors and ensuring that the grid structure is robust.
+
+![Screenshot from 2024-09-04 00-59-03](https://github.com/user-attachments/assets/cdbff524-e23c-4c85-9162-34b2e208ce8d)
+
+
+
+
+### 5-TritonRoute features
+TritonRoute is an open-source detailed routing tool used in the physical design of integrated circuits (ICs). It is a critical component of the Triton suite of EDA (Electronic Design Automation) tools. TritonRoute is specifically designed for the detailed routing stage of VLSI (Very Large Scale Integration) design.
+
+Key Features of TritonRoute:
+Detailed Routing:
+
+TritonRoute performs the detailed routing step in the IC design flow, where it converts global routing paths into exact geometrical wire routes on the metal layers of the chip.
+It handles the connection of signal nets, power nets, and clock nets, ensuring that all routing adheres to design rules.
+Design Rule Checking (DRC):
+
+TritonRoute incorporates design rule checking within its routing algorithms to ensure that all routed wires comply with the foundry's design rules, such as spacing, width, and via requirements.
+The tool is capable of resolving DRC violations that may arise during routing.
+Open-Source and Integration:
+
+TritonRoute is open-source, which means it can be freely used, modified, and integrated into custom EDA flows.
+It is part of the broader OpenROAD project, which aims to provide a fully autonomous, open-source RTL-to-GDSII flow.
+High-Quality Routing:
+
+The tool focuses on generating high-quality routing solutions that minimize wire length, reduce congestion, and respect timing and power constraints.
+It can handle complex designs with a large number of nets and multiple metal layers.
+Scalability:
+
+TritonRoute is designed to be scalable, handling both small and large designs efficiently. It leverages modern algorithms to manage the complexity of routing in advanced technology nodes.
+Customization and Flexibility:
+
+Being open-source, TritonRoute allows for extensive customization. Users can modify the tool to suit specific design requirements or integrate it with other tools in their design flow.
+The tool can be adapted for different technology nodes and design styles.
+Part of the Triton Suite:
+
+TritonRoute works in conjunction with other tools in the Triton suite, such as TritonCTS (Clock Tree Synthesis) and TritonPlace (Placement), providing a comprehensive solution for physical design.
+Community and Support:
+
+As an open-source project, TritonRoute benefits from community contributions and ongoing development. It is actively maintained by researchers and contributors in the EDA community.
+
+![Screenshot from 2024-09-04 01-07-12](https://github.com/user-attachments/assets/c6d657d9-fb20-47cd-987f-bf5396563fe1)
+![Screenshot from 2024-09-04 01-07-40](https://github.com/user-attachments/assets/ae3d8a68-aa5c-49ec-bbee-c1bb00420a06)
+![Screenshot from 2024-09-04 01-08-24](https://github.com/user-attachments/assets/3bb0926d-fd52-4ebe-b417-95f9ccbbc4a1)
+
+
+
+### 6-Labs practise
+
+![45aa96bb-7bfc-47f6-9e68-32965104e4d9](https://github.com/user-attachments/assets/1daa8a1a-3d03-4bf6-afec-ed8ed0c640de)
+![97020c9a-4804-44ec-9dbc-3c888a31c74d](https://github.com/user-attachments/assets/550bd942-321a-4066-959c-abb7d13700fa)
+![7f266a21-d2a7-4bee-9f74-aeec5c9ddf82](https://github.com/user-attachments/assets/aedeac6a-cfb4-4269-92a2-919e2b1f5c2f)
+![bb469b51-769c-408b-8bbe-5c7e59c6870c](https://github.com/user-attachments/assets/0d838e4c-ebee-4305-ac48-6eaad362e3e9)
+![ac832fc1-5798-4ab1-90d1-513754c44919](https://github.com/user-attachments/assets/b2450cc5-ae3d-4256-867a-907cd899cd75)
+![34bfdaae-603e-493a-98a6-20be76519035](https://github.com/user-attachments/assets/635c710e-299c-4f85-98c0-1c65171a53ed)
+![6dbcb6f0-bf28-4e85-acba-03eda3ec56ee](https://github.com/user-attachments/assets/f905c566-3969-4be5-995b-3b4b1ab961e2)
+![aff86155-b67e-44d9-9ac9-583f2a2d9ec2](https://github.com/user-attachments/assets/166d4152-8c12-4cd4-86cd-fce2e22c54d3)
+![7d38b0ba-3ac6-4773-bd9f-306e6e31f56f](https://github.com/user-attachments/assets/7ba075d9-9fc4-43d3-a2ad-c6407d57e7aa)
+
+
+
+
+
 
 
 
